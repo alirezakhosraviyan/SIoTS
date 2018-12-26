@@ -61,6 +61,11 @@
 <div class="login-content">
     <!-- Login -->
     <div class="nk-block toggled" id="l-login">
+
+        {% if error %}
+        <div class="alert alert-danger alert-mg-b-0" role="alert">{{ message }}
+                            </div>
+        {% endif %}
         <form class="nk-form" method="POST" action="/login/">
             {% csrf_token %}
             <div class="input-group">

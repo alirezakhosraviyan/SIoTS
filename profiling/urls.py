@@ -9,6 +9,7 @@ urlpatterns = [
     path('', index, name='home'),
     path('add_new', add_new, name='add_new'),
     path('import', import_excel),
-    path('login/', auth_views.LoginView.as_view(template_name='login-register.html', redirect_field_name='home'), name='login'),
-    path('logout/', auth_views.logout_then_login, {'next_page': '/app/authentication/login/'}, name='logout'),
+    path('login/', login),
+    path('add_component/first/', add_component),
+    path('logout/', auth_views.logout_then_login, name='logout'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
