@@ -9,12 +9,10 @@ def index(requests):
     return render(requests, 'index.html')
 
 
-@login_required
 def add_new(requests):
     return render(requests, 'add_new.html')
 
 
-@login_required
 def login(requset):
     if requset.method == 'GET':
         return render(requset, 'login-register.html')
@@ -44,7 +42,6 @@ def login(requset):
         return redirect('/')
 
 
-@login_required
 def import_excel(requests):
     if requests.method == 'GET':
 
@@ -85,17 +82,48 @@ def import_excel(requests):
         redirect('/404')
 
 
-@login_required
-def add_component(requests):
+def add_component_1(requests):
+    if requests.method == 'GET':
+        return render(requests, 'wizard.html')
+    elif requests.method == 'POST':
+        pass
+
+
+def add_component_2(requests):
     if requests.method == 'GET':
         return render(requests, 'first_step.html')
     elif requests.method == 'POST':
         pass
 
 
-@login_required
-def upload_backend_code(requests):
+def add_component_3(requests):
     if requests.method == 'GET':
-        return render(requests, '')
+        return render(requests, 'first_step.html')
     elif requests.method == 'POST':
         pass
+
+
+def add_environment(requests):
+    if requests.method == 'GET':
+        return render(requests, 'add_environment.html')
+    elif requests.method == 'POST':
+        pass
+
+
+def add_service(requests):
+    if requests.method == 'GET':
+        return render(requests, 'add_service.html')
+    elif requests.method == 'POST':
+        pass
+
+
+def upload_backend_code(requests):
+    if requests.method == 'GET':
+        return render(requests, 'code-editor.html')
+    elif requests.method == 'POST':
+        pass
+
+
+def analytics(request):
+    if request.method == 'GET':
+        return render(request, 'line-charts.html')

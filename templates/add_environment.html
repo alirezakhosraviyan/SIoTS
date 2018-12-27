@@ -1,15 +1,15 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Code Editor | Notika - Notika Admin Template</title>
+    <title>SIoTS | Add environment</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
@@ -30,23 +30,42 @@
     <!-- animate CSS
 		============================================ -->
     <link rel="stylesheet" href="/static/css/animate.css">
+    <!-- summernote CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/summernote/summernote.css">
+    <!-- Range Slider CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/themesaller-forms.css">
     <!-- normalize CSS
 		============================================ -->
     <link rel="stylesheet" href="/static/css/normalize.css">
-	<!-- wave CSS
-		============================================ -->
-    <link rel="stylesheet" href="/static/css/wave/waves.min.css">
-    <link rel="stylesheet" href="/static/css/wave/button.css">
     <!-- mCustomScrollbar CSS
 		============================================ -->
     <link rel="stylesheet" href="/static/css/scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- Notika icon CSS
 		============================================ -->
     <link rel="stylesheet" href="/static/css/notika-custom-icon.css">
-    <!-- codemirror CSS
+    <!-- bootstrap select CSS
 		============================================ -->
-    <link rel="stylesheet" href="/static/css/code-editor/codemirror.css">
-    <link rel="stylesheet" href="/static/css/code-editor/ambiance.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-select/bootstrap-select.css">
+    <!-- datapicker CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/datapicker/datepicker3.css">
+    <!-- Color Picker CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/color-picker/farbtastic.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/chosen/chosen.css">
+    <!-- notification CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/notification/notification.css">
+    <!-- dropzone CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/dropzone/dropzone.css">
+    <!-- wave CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/wave/waves.min.css">
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="/static/css/main.css">
@@ -71,7 +90,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="#"><img src="/static/img/logo/logo.png" alt="" /></a>
+                        <a href="#"><img src="/static/img/logo/logo1.png" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -107,7 +126,7 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
-                                                    <img src="img/post/2.jpg" alt="" />
+                                                    <img src="/static/img/post/2.jpg" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>Jonathan Morris</h3>
@@ -118,7 +137,7 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img">
-                                                    <img src="img/post/4.jpg" alt="" />
+                                                    <img src="/static/img/post/4.jpg" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>Fredric Mitchell</h3>
@@ -279,7 +298,7 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img chat-img">
-                                                    <img src="/static/img/post/1.jpg" alt="" />
+                                                    <img src="img/post/1.jpg" alt="" />
                                                     <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
                                                 </div>
                                                 <div class="hd-mg-ctn">
@@ -291,7 +310,7 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img chat-img">
-                                                    <img src="/static/img/post/2.jpg" alt="" />
+                                                    <img src="img/post/2.jpg" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>Jonathan Morris</h3>
@@ -302,7 +321,7 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img chat-img">
-                                                    <img src="/static/img/post/4.jpg" alt="" />
+                                                    <img src="img/post/4.jpg" alt="" />
                                                 </div>
                                                 <div class="hd-mg-ctn">
                                                     <h3>Fredric Mitchell</h3>
@@ -313,7 +332,7 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img chat-img">
-                                                    <img src="/static/img/post/1.jpg" alt="" />
+                                                    <img src="img/post/1.jpg" alt="" />
                                                     <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
                                                 </div>
                                                 <div class="hd-mg-ctn">
@@ -325,7 +344,7 @@
                                         <a href="#">
                                             <div class="hd-message-sn">
                                                 <div class="hd-message-img chat-img">
-                                                    <img src="/static/img/post/2.jpg" alt="" />
+                                                    <img src="img/post/2.jpg" alt="" />
                                                     <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
                                                 </div>
                                                 <div class="hd-mg-ctn">
@@ -461,13 +480,13 @@
                         </li>
                         <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
                         </li>
-                        <li class="active"><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
+                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
                         </li>
                         <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
                         </li>
                         <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
+                        <li class="active"><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
                         </li>
                         <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
                         </li>
@@ -501,7 +520,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div id="Interface" class="tab-pane active notika-tab-menu-bg animated flipInX">
+                        <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="animations.html">Animations</a>
                                 </li>
@@ -537,7 +556,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <div id="Forms" class="tab-pane active notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="form-elements.html">Form Elements</a>
                                 </li>
@@ -593,100 +612,45 @@
         </div>
     </div>
     <!-- Main Menu area End-->
-	<!-- Breadcomb area Start-->
-	<div class="breadcomb-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<div class="breadcomb-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-								<div class="breadcomb-wp">
-									<div class="breadcomb-icon">
-										<i class="notika-icon notika-edit"></i>
-									</div>
-									<div class="breadcomb-ctn">
-										<h2>Code Editor</h2>
-										<p>Welcome to Notika <span class="bread-ntd">Admin Template</span></p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-								<div class="breadcomb-report">
-									<button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Breadcomb area End-->
-    <!-- Code Editor area start-->
-    <div class="code-editor-area">
+
+    <!-- Form Element area Start-->
+    <div class="form-element-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="nk-cd-ed-wp">
-                        <textarea id="code1">
-	<script>
-		$(document).ready(function() {
-			var usa_map = new Datamap({
-				element: document.getElementById("usa_map"),
-				responsive: true,
-				scope: 'usa',
-				fills: {
-					defaultFill: "#DBDAD6",
-					active: "#00c292"
-				},
-				geographyConfig: {
-					highlightFillColor: '#00c292',
-					highlightBorderWidth: 0
-				},
-				data: {
-					NE: { fillKey: "active" },
-					CA: { fillKey: "active" },
-					NY: { fillKey: "active" },
-				}
-			});
-		});
-	</script>
-							</textarea>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="nk-cd-ed-wp sm-res-mg-t-30">
-                        <textarea id="code2">
-	<script>
-		$(document).ready(function() {
-			var usa_map = new Datamap({
-				element: document.getElementById("usa_map"),
-				responsive: true,
-				scope: 'usa',
-				fills: {
-					defaultFill: "#DBDAD6",
-					active: "#00c292"
-				},
-				geographyConfig: {
-					highlightFillColor: '#00c292',
-					highlightBorderWidth: 0
-				},
-				data: {
-					NE: { fillKey: "active" },
-					CA: { fillKey: "active" },
-					NY: { fillKey: "active" },
-				}
-			});
-		});
-	</script>
-							</textarea>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-element-list mg-t-30">
+                        <div class="cmp-tb-hd">
+                            <h2>Add New Environment</h2>
+                            <p></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control">
+                                        <label class="nk-label">Environment name</label>
+                                    </div>
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                        <input type="submit" class="btn btn-success" value="submit" style="color: #0B792F">submit
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-    <!-- Code Editor area End-->
+    <!-- Form Element area End-->
     <!-- Start Footer area-->
     <div class="footer-copyright-area">
         <div class="container">
@@ -744,21 +708,53 @@
     <script src="/static/js/knob/jquery.knob.js"></script>
     <script src="/static/js/knob/jquery.appear.js"></script>
     <script src="/static/js/knob/knob-active.js"></script>
-    <!-- code editor JS
+    <!-- Input Mask JS
 		============================================ -->
-    <script src="/static/js/code-editor/codemirror.js"></script>
-    <script src="/static/js/code-editor/code-editor.js"></script>
-    <script src="/static/js/code-editor/code-editor-active.js"></script>
+    <script src="/static/js/jasny-bootstrap.min.js"></script>
+    <!-- icheck JS
+		============================================ -->
+    <script src="/static/js/icheck/icheck.min.js"></script>
+    <script src="/static/js/icheck/icheck-active.js"></script>
+    <!-- rangle-slider JS
+		============================================ -->
+    <script src="/static/js/rangle-slider/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="/static/js/rangle-slider/jquery-ui-touch-punch.min.js"></script>
+    <script src="/static/js/rangle-slider/rangle-active.js"></script>
+    <!-- datapicker JS
+		============================================ -->
+    <script src="/static/js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="/static/js/datapicker/datepicker-active.js"></script>
+    <!-- bootstrap select JS
+		============================================ -->
+    <script src="/static/js/bootstrap-select/bootstrap-select.js"></script>
+    <!--  color-picker JS
+		============================================ -->
+    <script src="/static/js/color-picker/farbtastic.min.js"></script>
+    <script src="/static/js/color-picker/color-picker.js"></script>
+    <!--  notification JS
+		============================================ -->
+    <script src="/static/js/notification/bootstrap-growl.min.js"></script>
+    <script src="/static/js/notification/notification-active.js"></script>
+    <!--  summernote JS
+		============================================ -->
+    <script src="/static/js/summernote/summernote-updated.min.js"></script>
+    <script src="/static/js/summernote/summernote-active.js"></script>
+    <!-- dropzone JS
+		============================================ -->
+    <script src="/static/js/dropzone/dropzone.js"></script>
+    <!--  wave JS
+		============================================ -->
+    <script src="/static/js/wave/waves.min.js"></script>
+    <script src="/static/js/wave/wave-active.js"></script>
+    <!--  chosen JS
+		============================================ -->
+    <script src="/static/js/chosen/chosen.jquery.js"></script>
     <!--  Chat JS
 		============================================ -->
     <script src="/static/js/chat/jquery.chat.js"></script>
     <!--  todo JS
 		============================================ -->
     <script src="/static/js/todo/jquery.todo.js"></script>
-	<!--  wave JS
-		============================================ -->
-    <script src="/static/js/wave/waves.min.js"></script>
-    <script src="/static/js/wave/wave-active.js"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="/static/js/plugins.js"></script>
