@@ -8,3 +8,19 @@ from .models import *
 class EventTypeAdmin(ImportExportModelAdmin):
     list_display = ['__str__']
 
+
+@admin.register(Service)
+class EventTypeAdmin(ImportExportModelAdmin):
+    list_display = ['__str__']
+
+
+@admin.register(User)
+class EventTypeAdmin(ImportExportModelAdmin):
+    list_display = ['__str__']
+
+
+@admin.register(DeviceType)
+class EventTypeAdmin(ImportExportModelAdmin):
+    list_display = ['__str__']
+
+
