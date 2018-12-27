@@ -5,15 +5,16 @@ import pandas as pd
 from django.contrib.auth.decorators import login_required
 
 
-@login_required
 def index(requests):
     return render(requests, 'index.html')
 
 
+@login_required
 def add_new(requests):
     return render(requests, 'add_new.html')
 
 
+@login_required
 def login(requset):
     if requset.method == 'GET':
         return render(requset, 'login-register.html')
@@ -43,6 +44,7 @@ def login(requset):
         return redirect('/')
 
 
+@login_required
 def import_excel(requests):
     if requests.method == 'GET':
 
@@ -83,8 +85,17 @@ def import_excel(requests):
         redirect('/404')
 
 
+@login_required
 def add_component(requests):
     if requests.method == 'GET':
         return render(requests, 'first_step.html')
+    elif requests.method == 'POST':
+        pass
+
+
+@login_required
+def upload_backend_code(requests):
+    if requests.method == 'GET':
+        return render(requests, '')
     elif requests.method == 'POST':
         pass

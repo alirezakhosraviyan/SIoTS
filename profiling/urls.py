@@ -11,5 +11,6 @@ urlpatterns = [
     path('import', import_excel),
     path('login/', login),
     path('add_component/first/', add_component),
+    path('upload_customized_code', add_component),
     path('logout/', auth_views.logout_then_login, name='logout'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
