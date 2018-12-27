@@ -9,6 +9,7 @@ class EventTypeAdmin(ImportExportModelAdmin):
     list_display = ['__str__']
 
 
+
 @admin.register(Service)
 class EventTypeAdmin(ImportExportModelAdmin):
     list_display = ['__str__']
