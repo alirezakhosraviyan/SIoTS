@@ -105,7 +105,7 @@ def add_service(requests):
             name=requests.POST['service_name']
         )
         service.save()
-        return redirect('/add_services')
+        return redirect('/all_services')
 
 
 @login_required
@@ -130,7 +130,7 @@ def add_device(requests):
             device.services.add(Service.objects.get(pk=cur))
 
         device.save()
-        return redirect('/add_devices')
+        return redirect('/all_devices')
 
 @login_required
 def all_services(requests):
