@@ -78,6 +78,7 @@ def import_excel(requests):
     else:
         redirect('/404')
 
+
 @login_required
 def add_environment(requests):
     if requests.method == 'GET':
@@ -92,6 +93,8 @@ def add_environment(requests):
         for cur in requests.POST['available_services']:
             env.devices.add(Device.objects.get(id=cur))
         env.save()
+        return redirect('/all_envs')
+
 
 @login_required
 def add_service(requests):
@@ -102,6 +105,8 @@ def add_service(requests):
             name=requests.POST['service_name']
         )
         service.save()
+        return redirect('/add_services')
+
 
 @login_required
 def add_device(requests):
@@ -125,6 +130,7 @@ def add_device(requests):
             device.services.add(Service.objects.get(pk=cur))
 
         device.save()
+        return redirect('/add_devices')
 
 @login_required
 def all_services(requests):

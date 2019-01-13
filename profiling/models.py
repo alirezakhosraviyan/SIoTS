@@ -25,8 +25,8 @@ class User(models.Model):
 class Device(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='user')
     type = models.ForeignKey(DeviceType, on_delete=models.DO_NOTHING, related_name='devices')
-    brand = models.IntegerField(default=0)
-    model = models.IntegerField(default=0)
+    brand = models.CharField(max_length=1000)
+    model = models.CharField(max_length=1000)
     services = models.ManyToManyField(Service)
     lat = models.CharField(max_length=1000)
     long = models.CharField(max_length=1000)
