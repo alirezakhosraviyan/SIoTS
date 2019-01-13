@@ -27,7 +27,15 @@ class Device(models.Model):
     type = models.ForeignKey(DeviceType, on_delete=models.DO_NOTHING, related_name='devices')
     brand = models.IntegerField(default=0)
     model = models.IntegerField(default=0)
+    services = models.ManyToManyField(Service)
+    lat = models.CharField(max_length=1000)
+    long = models.CharField(max_length=1000)
 
 
-
+class Environment(models.Model):
+    name = models.CharField(max_length=1000)
+    lat = models.CharField(max_length=1000)
+    long = models.CharField(max_length=1000)
+    radius = models.IntegerField(default=0)
+    devices = models.ManyToManyField(Device)
 

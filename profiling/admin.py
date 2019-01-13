@@ -9,7 +9,6 @@ class EventTypeAdmin(ImportExportModelAdmin):
     list_display = ['__str__']
 
 
-
 @admin.register(Service)
 class EventTypeAdmin(ImportExportModelAdmin):
     list_display = ['__str__']
@@ -23,5 +22,17 @@ class EventTypeAdmin(ImportExportModelAdmin):
 @admin.register(DeviceType)
 class EventTypeAdmin(ImportExportModelAdmin):
     list_display = ['__str__']
+
+
+@admin.register(Device)
+class DeviceAdmin(ImportExportModelAdmin):
+    list_display = ['__str__']
+
+
+@admin.register(Environment)
+class DeviceAdmin(ImportExportModelAdmin):
+    list_display = ['__str__']
+
+
 
 
