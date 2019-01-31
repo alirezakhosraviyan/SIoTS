@@ -38,43 +38,32 @@ def my_login(requset):
     else:
         return redirect('/')
 
+
 @login_required
 def import_excel(requests):
     if requests.method == 'GET':
-
         return render(requests, 'import.html')
     elif requests.method == 'POST':
-        form = ExcelFileForm(requests.POST, requests.FILES)
-
-        if form.is_valid():
-            try:
-                form.save()
-                file = ExcelFile.objects.last()
-                df = pd.read_csv(file=file)
-                for index, row in df.iterrows():
-                    cur = str(row.values[0]).split(',')
-                    print(cur)
-
-                return
-                df = pd.read_csv("objects_description.csv", "objects_description")
-                for index, row in df.iterrows():
-                    cur = str(row.values[0]).split(',')
-                    if len(cur) == 5:
-                        print(2)
-                        device = Device()
-                        device.pk = cur[0]
-                        user, created = User.objects.get_or_create(pk=cur[1])
-                        device.user = user
-                        device.type = cur[2]
-                        device.brand = cur[3]
-                        device.model = cur[4]
-                        device.save()
-                    break
-                return redirect('/app/motosel_manager/backend/')
-            except Exception as e:
-                return HttpResponse(str(e))
-        else:
-            return HttpResponse(str(form.errors))
+        try:
+            file = ExcelFile(file=requests.FILES['file'])
+            file.save()
+            df = pd.read_csv(file.file.path)
+            for index, row in df.iterrows():
+                cur = row.values
+                if len(cur) == 5:
+                    device = Device()
+                    device.pk = int(cur[0])
+                    user, created = User.objects.get_or_create(pk=cur[1])
+                    device.user = user
+                    device_type, created = DeviceType.objects.get_or_create(pk=cur[2])
+                    device.type = device_type
+                    device.brand = int(cur[3])
+                    device.model = int(cur[4])
+                    device.save()
+            return redirect('/app/motosel_manager/backend/')
+        except Exception as e:
+            print(e)
+            return HttpResponse(str(e))
     else:
         redirect('/404')
 
@@ -131,6 +120,7 @@ def add_device(requests):
 
         device.save()
         return redirect('/all_devices')
+
 
 @login_required
 def all_services(requests):
