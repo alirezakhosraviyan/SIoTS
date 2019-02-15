@@ -7,7 +7,8 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', index, name='home'),
-    path('import', import_excel),
+    path('import/', import_excel),
+    path('location_import/', import_excel_location),
     path('login/', my_login),
     path('add_environment', add_environment),
     path('add_device', add_device),
@@ -15,6 +16,7 @@ urlpatterns = [
     path('all_services', all_services),
     path('all_envs', all_environments),
     path('all_devices', all_devices),
+    path('maps', maps),
     path('analytics', analytics),
     path('upload_backend_code', upload_backend_code),
     path('logout/', auth_views.logout_then_login, name='logout'),

@@ -653,7 +653,28 @@
                             <p>DropzoneJS is an open source library that provides Drag and Drop file uploads with image previews. It’s lightweight, doesn't depend on any other library (like jQuery) and is highly customizable.</p>
                         </div>
                         <div id="dropzone1" class="multi-uploader-cs">
-                            <form action="/import" method="POST" enctype="multipart/form-data" class="dropzone dropzone-nk needsclick" id="demo1-upload">
+                            <form action="/import/" method="POST" enctype="multipart/form-data" class="dropzone dropzone-nk needsclick" id="demo1-upload">
+                                {% csrf_token %}
+                                <input type="file" name="file" required/>
+                                <input type="submit" value="submit"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dropzone-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="dropdone-nk mg-t-30">
+                        <div class="cmp-tb-hd">
+                            <h2>Drag and Drop File Uploader</h2>
+                            <p>DropzoneJS is an open source library that provides Drag and Drop file uploads with image previews. It’s lightweight, doesn't depend on any other library (like jQuery) and is highly customizable.</p>
+                        </div>
+                        <div id="dropzone1" class="multi-uploader-cs">
+                            <form action="/location_import/" method="POST" enctype="multipart/form-data" class="dropzone dropzone-nk needsclick" id="demo1-upload">
                                 {% csrf_token %}
                                 <input type="file" name="file" required/>
                                 <input type="submit" value="submit"/>

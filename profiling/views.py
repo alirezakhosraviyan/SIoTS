@@ -4,7 +4,7 @@ from .forms import *
 from .models import *
 import pandas as pd
 from django.contrib.auth.decorators import login_required
-
+import json
 
 @login_required
 def index(requests):
@@ -60,7 +60,32 @@ def import_excel(requests):
                     device.brand = int(cur[3])
                     device.model = int(cur[4])
                     device.save()
-            return redirect('/app/motosel_manager/backend/')
+            return redirect('/all_devices/')
+        except Exception as e:
+            print(e)
+            return HttpResponse(str(e))
+    else:
+        redirect('/404')
+
+
+@login_required
+def import_excel_location(requests):
+    if requests.method == 'GET':
+        return render(requests, 'import.html')
+    elif requests.method == 'POST':
+        try:
+            file = ExcelFile(file=requests.FILES['file'])
+            file.save()
+            df = pd.read_csv(file.file.path)
+            for index, row in df.iterrows():
+                cur = row.values
+                if len(cur) == 3:
+                    if Device.objects.filter(pk=cur[0]).exists():
+                        device = Device.objects.get(pk=cur[0])
+                        device.long = cur[2]
+                        device.lat = cur[1]
+                        device.save()
+            return redirect('/all_devices')
         except Exception as e:
             print(e)
             return HttpResponse(str(e))
@@ -82,7 +107,7 @@ def add_environment(requests):
         for cur in requests.POST['available_services']:
             env.devices.add(Device.objects.get(id=cur))
         env.save()
-        return redirect('/all_envs')
+        return redirect('/maps')
 
 
 @login_required
@@ -94,7 +119,7 @@ def add_service(requests):
             name=requests.POST['service_name']
         )
         service.save()
-        return redirect('/all_services')
+        return redirect('/add_device')
 
 
 @login_required
@@ -119,7 +144,7 @@ def add_device(requests):
             device.services.add(Service.objects.get(pk=cur))
 
         device.save()
-        return redirect('/all_devices')
+        return redirect('/add_environment')
 
 
 @login_required
@@ -136,6 +161,18 @@ def all_devices(requests):
         return render(requests, 'all_devices.html', {
             'devices': Device.objects.all()
         })
+
+
+@login_required
+def maps(requests):
+    if requests.method == 'GET':
+
+        device = Device.objects.exclude(lat__exact='')
+        res = json.dumps([{'lat': float(cur.lat), 'lng': float(cur.long)} for cur in device])
+        return render(requests, 'google-map.html', {
+            'markers': res
+        })
+
 
 
 @login_required
