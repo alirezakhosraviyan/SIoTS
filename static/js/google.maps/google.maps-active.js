@@ -3,7 +3,6 @@
 function initMap() {
         
 		 var myLatlng = {lat: 23.777176, lng: 90.399452};
-		 var myLatlng2 = {lat: 24.777222, lng: 95.399452};
 		var map6 = new google.maps.Map(document.getElementById('map6'), {
           zoom: 4,
           center: myLatlng
@@ -13,11 +12,7 @@ function initMap() {
           map: map6,
           title: 'Click to zoom'
         });
-		var marker2 = new google.maps.Marker({
-          position: myLatlng2,
-          map: map6,
-          title: 'Click to zoom'
-        });
+		
 		var TILE_SIZE = 256;
 
       function createInfoWindowContent(latLng, zoom) {

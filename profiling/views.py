@@ -4,9 +4,9 @@ from .forms import *
 from .models import *
 import pandas as pd
 from django.contrib.auth.decorators import login_required
-import json
 
-@login_required
+
+
 def index(requests):
     return render(requests, 'index.html')
 
@@ -39,61 +39,47 @@ def my_login(requset):
         return redirect('/')
 
 
-@login_required
 def import_excel(requests):
     if requests.method == 'GET':
+
         return render(requests, 'import.html')
     elif requests.method == 'POST':
-        try:
-            file = ExcelFile(file=requests.FILES['file'])
-            file.save()
-            df = pd.read_csv(file.file.path)
-            for index, row in df.iterrows():
-                cur = row.values
-                if len(cur) == 5:
-                    device = Device()
-                    device.pk = int(cur[0])
-                    user, created = User.objects.get_or_create(pk=cur[1])
-                    device.user = user
-                    device_type, created = DeviceType.objects.get_or_create(pk=cur[2])
-                    device.type = device_type
-                    device.brand = int(cur[3])
-                    device.model = int(cur[4])
-                    device.save()
-            return redirect('/all_devices/')
-        except Exception as e:
-            print(e)
-            return HttpResponse(str(e))
-    else:
-        redirect('/404')
+        form = ExcelFileForm(requests.POST, requests.FILES)
 
+        if form.is_valid():
+            try:
+                form.save()
+                file = ExcelFile.objects.last()
+                df = pd.read_csv(file=file)
+                for index, row in df.iterrows():
+                    cur = str(row.values[0]).split(',')
+                    print(cur)
 
-@login_required
-def import_excel_location(requests):
-    if requests.method == 'GET':
-        return render(requests, 'import.html')
-    elif requests.method == 'POST':
-        try:
-            file = ExcelFile(file=requests.FILES['file'])
-            file.save()
-            df = pd.read_csv(file.file.path)
-            for index, row in df.iterrows():
-                cur = row.values
-                if len(cur) == 3:
-                    if Device.objects.filter(pk=cur[0]).exists():
-                        device = Device.objects.get(pk=cur[0])
-                        device.long = cur[2]
-                        device.lat = cur[1]
+                return
+                df = pd.read_csv("objects_description.csv", "objects_description")
+                for index, row in df.iterrows():
+                    cur = str(row.values[0]).split(',')
+                    if len(cur) == 5:
+                        print(2)
+                        device = Device()
+                        device.pk = cur[0]
+                        user, created = User.objects.get_or_create(pk=cur[1])
+                        device.user = user
+                        device.type = cur[2]
+                        device.brand = cur[3]
+                        device.model = cur[4]
                         device.save()
-            return redirect('/all_devices')
-        except Exception as e:
-            print(e)
-            return HttpResponse(str(e))
+                    break
+                return redirect('/app/motosel_manager/backend/')
+            except Exception as e:
+                return HttpResponse(str(e))
+        else:
+            return HttpResponse(str(form.errors))
     else:
         redirect('/404')
 
 
-@login_required
+
 def add_environment(requests):
     if requests.method == 'GET':
         return render(requests, 'add_environment.html', {'devices': Device.objects.all()})
@@ -107,10 +93,10 @@ def add_environment(requests):
         for cur in requests.POST['available_services']:
             env.devices.add(Device.objects.get(id=cur))
         env.save()
-        return redirect('/maps')
+        return redirect('/all_envs')
 
 
-@login_required
+
 def add_service(requests):
     if requests.method == 'GET':
         return render(requests, 'add_service.html')
@@ -119,10 +105,10 @@ def add_service(requests):
             name=requests.POST['service_name']
         )
         service.save()
-        return redirect('/add_device')
+        return redirect('/all_services')
 
 
-@login_required
+
 def add_device(requests):
     if requests.method == 'GET':
         return render(requests, 'add_device.html', {
@@ -144,10 +130,9 @@ def add_device(requests):
             device.services.add(Service.objects.get(pk=cur))
 
         device.save()
-        return redirect('/add_environment')
+        return redirect('/all_devices')
 
 
-@login_required
 def all_services(requests):
     if requests.method == 'GET':
         return render(requests, 'all_services.html', {
@@ -155,7 +140,7 @@ def all_services(requests):
         })
 
 
-@login_required
+
 def all_devices(requests):
     if requests.method == 'GET':
         return render(requests, 'all_devices.html', {
@@ -163,19 +148,7 @@ def all_devices(requests):
         })
 
 
-@login_required
-def maps(requests):
-    if requests.method == 'GET':
 
-        device = Device.objects.exclude(lat__exact='')
-        res = json.dumps([{'lat': float(cur.lat), 'lng': float(cur.long)} for cur in device])
-        return render(requests, 'google-map.html', {
-            'markers': res
-        })
-
-
-
-@login_required
 def all_environments(requests):
     if requests.method == 'GET':
         return render(requests, 'all_environment.html', {
@@ -183,7 +156,6 @@ def all_environments(requests):
         })
 
 
-@login_required
 def upload_backend_code(requests):
     if requests.method == 'GET':
         return render(requests, 'code-editor.html')
@@ -191,7 +163,6 @@ def upload_backend_code(requests):
         pass
 
 
-@login_required
 def analytics(request):
     if request.method == 'GET':
         return render(request, 'line-charts.html')
