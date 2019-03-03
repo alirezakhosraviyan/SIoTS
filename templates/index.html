@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard Two | Notika - Notika Admin Template</title>
+    <title>SIOTS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -37,6 +37,7 @@
 		============================================ -->
     <link rel="stylesheet" href="/static/css/scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- jvectormap CSS
+    
 		============================================ -->
     <link rel="stylesheet" href="/static/css/jvectormap/jquery-jvectormap-2.0.3.css">
     <!-- Notika icon CSS
@@ -54,6 +55,37 @@
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="/static/css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="stylesheet" href="/static/css/notification/notification.css">
+    <!-- dropzone CSS
+		============================================ -->
+
+     <!-- bootstrap select CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/bootstrap-select/bootstrap-select.css">
+
+    
+    <link rel="stylesheet" href="/static/css/dropzone/dropzone.css">
+    <!-- wave CSS    <script src="/static/js/vendor/modernizr-2.8.3.min.js"></script>
+
+        <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+
+
+
+
+
+    <!-- charts CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/c3/c3.min.css">
+
     <!-- modernizr JS
 		============================================ -->
     <script src="/static/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -361,13 +393,13 @@
                                         <li><a href="/all_services">All Services</a></li>
                                     </ul>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">New</a>
+                                {% comment %} <li><a data-toggle="collapse" data-target="#demoevent" href="#">New</a>
                                     <ul id="demoevent" class="collapse dropdown-header-top">
                                         <li><a href="/add_environment">Environment</a></li>
                                         <li><a href="/add_device">Device</a></li>
                                         <li><a href="/add_service">Service</a></li>
                                     </ul>
-                                </li>
+                                </li> {% endcomment %}
                             </ul>
                         </nav>
                     </div>
@@ -384,8 +416,6 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li><a data-toggle="tab" href="#add_new"><i class="notika-icon notika-bar-chart"></i> New</a>
-                        </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
                         <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
@@ -397,180 +427,511 @@
                                 </li>
                             </ul>
                         </div>
-                        <div id="add_new" class="tab-pane notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href="/add_environment">Environment</a>
-                                <li><a href="/add_device">Device</a>
-                                <li><a href="/add_service">Service</a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Main Menu area End-->
-    <!-- Start Status area -->
-    <div class="notika-status-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter">50,000</span></h2>
-                            <p>Total Website Traffics</p>
-                        </div>
-                        <div class="sparkline-bar-stats1">9,4,8,6,5,6,4,8,3,5,9,5</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter">90,000</span>k</h2>
-                            <p>Website Impressions</p>
-                        </div>
-                        <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2>$<span class="counter">40,000</span></h2>
-                            <p>Total Online Sales</p>
-                        </div>
-                        <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter">1,000</span></h2>
-                            <p>Total Support Tickets</p>
-                        </div>
-                        <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Status area-->
-    <!-- Start Sale Statistic area-->
-    <div class="sale-statistic-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
-                    <div class="sale-statistic-inner notika-shadow mg-tb-30">
-                        <div class="curved-inner-pro">
-                            <div class="curved-ctn">
-                                <h2>Sales Statistics</h2>
-                                <p>Vestibulum purus quam scelerisque, mollis nonummy metus</p>
-                            </div>
-                        </div>
-                        <div id="line-chart" class="flot-chart flot-chart-sts"></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
-                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
-                        <div class="past-day-statis">
-                            <h2>For The Past 30 Days</h2>
-                            <p>Fusce eget dolor id justo luctus the commodo vel pharetra nisi. Donec velit of libero.</p>
-                        </div>
-						<div class="dash-widget-visits"></div>
-                        <div class="past-statistic-an">
-                            <div class="past-statistic-ctn">
-                                <h3><span class="counter">3,20,000</span></h3>
-                                <p>Page Views</p>
-                            </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-bar"></div>
-                            </div>
-                        </div>
-                        <div class="past-statistic-an">
-                            <div class="past-statistic-ctn">
-                                <h3><span class="counter">1,03,000</span></h3>
-                                <p>Total Clicks</p>
-                            </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-line"></div>
-                            </div>
-                        </div>
-                        <div class="past-statistic-an">
-                            <div class="past-statistic-ctn">
-                                <h3><span class="counter">24,00,000</span></h3>
-                                <p>Site Visitors</p>
-                            </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-bar-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Sale Statistic area-->
-    <!-- Start Email Statistic area-->
-    <div class="notika-email-post-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="email-statis-inner notika-shadow">
-                        <div class="email-ctn-round">
-                            <div class="email-rdn-hd">
-								<h2>Email Statistics</h2>
-							</div>
-                            <div class="email-statis-wrap">
-                                <div class="email-round-nock">
-                                    <input type="text" class="knob" value="0" data-rel="55" data-linecap="round" data-width="130" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true">
-                                </div>
-                                <div class="email-ctn-nock">
-                                    <p>Total Emails Sent</p>
-                                </div>
-                            </div>
-                            <div class="email-round-gp">
-                                <div class="email-round-pro">
-                                    <div class="email-signle-gp">
-                                        <input type="text" class="knob" value="0" data-rel="75" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
-                                    </div>
-                                    <div class="email-ctn-nock">
-                                        <p>Bounce Rate</p>
-                                    </div>
-                                </div>
-                                <div class="email-round-pro">
-                                    <div class="email-signle-gp">
-                                        <input type="text" class="knob" value="0" data-rel="35" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
-                                    </div>
-                                    <div class="email-ctn-nock">
-                                        <p>Total Opened</p>
-                                    </div>
-                                </div>
-                                <div class="email-round-pro sm-res-ds-n lg-res-mg-bl">
-                                    <div class="email-signle-gp">
-                                        <input type="text" class="knob" value="0" data-rel="45" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
-                                    </div>
-                                    <div class="email-ctn-nock">
-                                        <p>Total Ignored</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
+    <div class="main-menu-area mg-tb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                        <li class="active"><a data-toggle="tab" href="#add_manually"><i class="notika-icon notika-house"></i> Add manually</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#add_dataset"><i class="notika-icon notika-bar-chart"></i> Add dataset</a>
+                        </li>
+                       
+                    </ul>
+                    <div class="tab-content custom-menu-content">
+                        <div id="add_manually" class="tab-pane in active  animated flipInX">
+                             <div class="notika-main-menu-dropdown">
+                                <div class="row ">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                                            <li class="active"><a data-toggle="tab" href="#add_env"><i class="notika-icon notika-house"></i> Add Environment</a>
+                                            </li>
+                                            <li><a data-toggle="tab" href="#add_app"><i class="notika-icon notika-bar-chart"></i> Add Application</a>
+                                            </li>
+                                            <li class=""><a data-toggle="tab" href="#add_device"><i class="notika-icon notika-house"></i> Add Device</a>
+                                            </li>
+                                            <li><a data-toggle="tab" href="#add_service"><i class="notika-icon"></i> Add Service</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content custom-menu-content">
+                                            <div id="add_env" class="tab-pane in active  animated flipInX">
+                                                <div class="notika-main-menu-dropdown">
+                                                   <div class="form-element-area">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                    <div class="form-element-list mg-t-30">
+                                                                        <div class="cmp-tb-hd">
+                                                                            <h2>Add New Environment</h2>
+                                                                            <p></p>
+                                                                        </div>
+                                                                        <form action="/add_environment" method="POST" class="row">
+                                                                            {% csrf_token %}
+                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                                <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                                                                    <h2>Environment Name</h2>
+                                                                                </div>
+                                                                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                                                                    <div class="form-ic-cmp">
+                                                                                        <i class="notika-icon notika-house"></i>
+                                                                                    </div>
+                                                                                    <div class="nk-int-st">
+                                                                                        <input name="environment_name" type="text" class="form-control">
+                                                                                        <label class="nk-label"></label>
+                                                                                    </div>
+                                                                                    <div class="form-ic-cmp">
+                                                                                        <i class="notika-icon notika-success"></i>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+{#                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">#}
+{#                                                                                {% comment %} <div class="nk-int-mk sl-dp-mn mg-t-30">#}
+{#                                                                                    <h2>Available Devices</h2>#}
+{#                                                                                </div> {% endcomment %}#}
+{#                                                                                <div class="bootstrap-select">#}
+{#                                                                                    <select name="available_services" class="selectpicker" multiple>#}
+{#                                                                                        {% comment %} {% for cur in devices %} {% endcomment %}#}
+{#                                                                                            <option value="asd">asd</option>#}
+{#                                                                                        {% comment %} {% endfor %} {% endcomment %}#}
+{#                                                                                        </select>#}
+{#                                                                                </div>#}
+{#                                                                            </div>#}
+
+                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                                                                        <input type="submit" class="btn btn-success" value="submit" style="color: #0B792F">
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+        </div>
+                                                   </div>
+                                                </div> 
+                                                
+                                            </div>
+                                            <div id="add_app" class="tab-pane notika-icon notika-bar-chart animated flipInX">
+                                                <div class="notika-main-menu-dropdown">
+                                                   <div class="form-element-area">
+                                                       <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-element-list mg-t-30">
+                        <div class="cmp-tb-hd">
+                            <h2>Add New Application</h2>
+                            <p></p>
+                        </div>
+                        <form action="/add_environment" method="POST" class="row">
+                            {% csrf_token %}
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                    <h2>Application Name</h2>
+                                </div>
+                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input name="environment_name" type="text" class="form-control">
+                                        <label class="nk-label"></label>
+                                    </div>
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+{#                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">#}
+{#                                {% comment %} <div class="nk-int-mk sl-dp-mn mg-t-30">#}
+{#                                    <h2>Available Devices</h2>#}
+{#                                </div> {% endcomment %}#}
+{#                                <div class="bootstrap-select">#}
+{#                                    <select name="available_services" class="selectpicker" multiple>#}
+{#                                        {% comment %} {% for cur in devices %} {% endcomment %}#}
+{#											<option value="asd">asd</option>#}
+{#                                        {% comment %} {% endfor %} {% endcomment %}#}
+{#										</select>#}
+{#                                </div>#}
+{#                            </div>#}
+                            {% comment %} <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                    <h2>Latitude</h2>
+                                </div>
+                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input name="lat" type="text" class="form-control">
+                                        <label class="nk-label"></label>
+                                    </div>
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                    <h2>longitude</h2>
+                                </div>
+                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input name="long" type="text" class="form-control">
+                                        <label class="nk-label"></label>
+                                    </div>
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-success"></i>
+                                    </div>
+                                </div>
+                            </div> {% endcomment %}
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                        <input type="submit" class="btn btn-success" value="submit" style="color: #0B792F">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+                                                   </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div id="add_device" class="tab-pane notika-icon notika-house animated flipInX">
+                                                <div class="notika-main-menu-dropdown">
+                                                    <div class="form-element-area">
+                                                     <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div class="form-element-list mg-t-30">
+                                                                    <div class="cmp-tb-hd">
+                                                                        <h2>Add Device</h2>
+                                                                        <p></p>
+                                                                    </div>
+                                                                    <form action="/add_device" method="POST" class="row">
+                                                                        {% csrf_token %}
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                            <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                                                                <h2>Brand</h2>
+                                                                            </div>
+                                                                            <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                                                                <div class="form-ic-cmp">
+                                                                                    <i class="notika-icon notika-house"></i>
+                                                                                </div>
+                                                                                <div class="nk-int-st">
+                                                                                    <input name="brand" type="text" class="form-control">
+                                                                                    <label class="nk-label"></label>
+                                                                                </div>
+                                                                                <div class="form-ic-cmp">
+                                                                                    <i class="notika-icon notika-success"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                            <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                                                                <h2>Model</h2>
+                                                                            </div>
+                                                                            <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                                                                <div class="form-ic-cmp">
+                                                                                    <i class="notika-icon notika-house"></i>
+                                                                                </div>
+                                                                                <div class="nk-int-st">
+                                                                                    <input name="model" type="text" class="form-control">
+                                                                                    <label class="nk-label"></label>
+                                                                                </div>
+                                                                                <div class="form-ic-cmp">
+                                                                                    <i class="notika-icon notika-success"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                            <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                                                                <h2>Latitude</h2>
+                                                                            </div>
+                                                                            <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                                                                <div class="form-ic-cmp">
+                                                                                    <i class="notika-icon notika-house"></i>
+                                                                                </div>
+                                                                                <div class="nk-int-st">
+                                                                                    <input name="lat" type="text" class="form-control">
+                                                                                    <label class="nk-label"></label>
+                                                                                </div>
+                                                                                <div class="form-ic-cmp">
+                                                                                    <i class="notika-icon notika-success"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                            <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                                                                <h2>longitude</h2>
+                                                                            </div>
+                                                                            <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                                                                <div class="form-ic-cmp">
+                                                                                    <i class="notika-icon notika-house"></i>
+                                                                                </div>
+                                                                                <div class="nk-int-st">
+                                                                                    <input name="long" type="text" class="form-control">
+                                                                                    <label class="nk-label"></label>
+                                                                                </div>
+                                                                                <div class="form-ic-cmp">
+                                                                                    <i class="notika-icon notika-success"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                            <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                                                                <h2>Available Services</h2>
+                                                                            </div>
+                                                                            <div class="bootstrap-select">
+                                                                                <select name="available_services" class="selectpicker" multiple>
+                                                                                    {% for cur in services %}
+                                                                                        <option value="{{ cur.pk }}">{{ cur.name }}</option>
+                                                                                    {% endfor %}
+                                                                                    </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                            <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                                                                <h2>Device Type</h2>
+                                                                            </div>
+                                                                            <div class="bootstrap-select">
+                                                                                <select name="device_type" class="selectpicker">
+                                                                                    {% for cur in device_type %}
+                                                                                        <option value="{{ cur.pk }}">{{ cur.type_name }}</option>
+                                                                                    {% endfor %}
+                                                                                    </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                            <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                                                                <h2>User</h2>
+                                                                            </div>
+                                                                            <div class="bootstrap-select">
+                                                                                <select name="user" class="selectpicker">
+                                                                                    {% for cur in users %}
+                                                                                        <option value="{{ cur.pk }}">{{ cur.alpha }} | {{ cur.gama }} | {{ cur.beta }}</option>
+                                                                                    {% endfor %}
+                                                                                    </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                            <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                                                                    <input type="submit" class="btn btn-success" value="submit" style="color: #0B792F">
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="add_service" class="tab-pane notika-icon animated flipInX">
+                                                <div class="notika-main-menu-dropdown">
+                                                    <div class="form-element-area">
+                                                        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-element-list mg-t-30">
+                        <div class="cmp-tb-hd">
+                            <h2>Add New Service</h2>
+                            <p></p>
+                        </div>
+                        <form action="/add_service" method="POST" class="row">
+                            {% csrf_token %}
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn mg-t-30">
+                                    <h2>Service Name</h2>
+                                </div>
+                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-house"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input name="service_name" type="text" class="form-control">
+                                        <label class="nk-label"></label>
+                                    </div>
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                                        <input type="submit" class="btn btn-success" value="submit" style="color: #0B792F">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="add_dataset" class="tab-pane  animated flipInX">
+                            <div class="notika-main-menu-dropdown">
+                                <div class="dropzone-area">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="dropdone-nk mg-t-30">
+                                                    <div class="cmp-tb-hd">
+                                                        <h2>Drag and Drop File Uploader</h2>
+                                                        <p>DropzoneJS is an open source library that provides Drag and Drop file uploads with image previews. It’s lightweight, doesn't depend on any other library (like jQuery) and is highly customizable.</p>
+                                                    </div>
+                                                    <div id="dropzone1" class="multi-uploader-cs">
+                                                        <form action="/upload" class="dropzone dropzone-nk needsclick" id="demo1-upload">
+                                                            <div class="dz-message needsclick download-custom">
+                                                                <i class="notika-icon notika-cloud"></i>
+                                                                <h2>Drop files here or click to upload.</h2>
+                                                                <p><span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+                                                                </p>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- End Email Statistic area-->
 
+
+
+
+
+    <div class="main-menu-area mg-tb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                        <li class="active"><a data-toggle="tab" href="#add_manually"><i class="notika-icon notika-house"></i> Interface</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content custom-menu-content">
+                        <div id="add_manually" class="tab-pane in active  animated flipInX">
+                             <div class="notika-main-menu-dropdown">
+                                <div class="row ">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                                            <li class="active"><a data-toggle="tab" href="#google_map"><i class="notika-icon notika-house"></i> Google Map</a>
+                                            </li>
+                                            <li><a data-toggle="tab" href="#simple_view"><i class="notika-icon notika-bar-chart"></i> Simple View</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content custom-menu-content">
+                                            <div id="google_map" class="tab-pane in active  animated flipInX">
+                                                <div class="notika-main-menu-dropdown">
+                                                   <div class="form-element-area">
+                                                       <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                    <div class="google-map-single">
+                                                                        <div id="map2"></div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                   </div>
+                                                </div>
+
+                                            </div>
+                                            <div id="simple_view" class="tab-pane notika-icon notika-bar-chart animated flipInX">
+                                                <div class="notika-main-menu-dropdown">
+                                                   <div class="form-element-area">
+                                                       <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="data-map-single">
+                        <div id="basic_map"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="data-map-single sm-res-mg-t-30">
+                        <div id="selected_map"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="data-map-single mg-t-30">
+                        <div id="usa_map"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="data-map-single mg-t-30">
+                        <div id="arc_map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                                                   </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                <div class="wizard-action-pro">
+                                    <ul class="wizard-nav-ac">
+                                        <li><a class="button-previous a-prevent" href="#"><i class="notika-icon notika-back"></i></a></li>
+                                        <li><a class="button-next a-prevent" href="/upload_backend_code"><i class="notika-icon notika-next-pro"></i></a></li>
+                                    </ul>
+                                </div>
+
+{#    <button>next#}
+{#    </button>#}
     <!-- Start Footer area-->
     <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="footer-copy-right">
-                        <p>Copyright © 2018 
-. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                        <p>Social Internet Of Things Simulator</p>
                     </div>
                 </div>
             </div>
@@ -646,6 +1007,67 @@
 	<!-- tawk chat JS
 		============================================ -->
     <script src="/static/js/tawk-chat.js"></script>
+
+
+    <script src="/static/js/chat/jquery.chat.js"></script>
+    <!--  todo JS
+		============================================ -->
+    <script src="/static/js/todo/jquery.todo.js"></script>
+
+    <!-- plugins JS
+		============================================ -->
+    <script src="/static/js/plugins.js"></script>
+    <!-- Google map JS
+		============================================ -->
+    <script src="/static/js/google.maps/google.maps2-active.js"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVOIQ3qXUCmKVVV7DVexPzlgBcj5mQJmQ&callback=initMap"></script>
+
+    <script src="/static/js/icheck/icheck.min.js"></script>
+    <script src="/static/js/icheck/icheck-active.js"></script>
+    <!-- rangle-slider JS
+		============================================ -->
+    <script src="/static/js/rangle-slider/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="/static/js/rangle-slider/jquery-ui-touch-punch.min.js"></script>
+    <script src="/static/js/rangle-slider/rangle-active.js"></script>
+    <!-- datapicker JS
+		============================================ -->
+    <script src="/static/js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="/static/js/datapicker/datepicker-active.js"></script>
+    <!-- bootstrap select JS
+		============================================ -->
+    <script src="/static/js/bootstrap-select/bootstrap-select.js"></script>
+    <!--  color-picker JS
+		============================================ -->
+    <script src="/static/js/color-picker/farbtastic.min.js"></script>
+    <script src="/static/js/color-picker/color-picker.js"></script>
+    <!--  notification JS
+		============================================ -->
+    <script src="/static/js/notification/bootstrap-growl.min.js"></script>
+    <script src="/static/js/notification/notification-active.js"></script>
+    <!--  summernote JS
+		============================================ -->
+    <script src="/static/js/summernote/summernote-updated.min.js"></script>
+    <script src="/static/js/summernote/summernote-active.js"></script>
+    <!-- dropzone JS
+		============================================ -->
+    <script src="/static/js/dropzone/dropzone.js"></script>
+
+    <!--  chosen JS
+		============================================ -->
+    <script src="/static/js/chosen/chosen.jquery.js"></script>
+  <!-- Data Maps JS
+		============================================ -->
+    <script src="/static/js/data-map/d3.min.js"></script>
+    <script src="/static/js/data-map/topojson.js"></script>
+    <script src="/static/js/data-map/datamaps.all.min.js"></script>
+    <script src="/static/js/data-map/data-maps-active.js"></script>
+
+
+
+
+
+
 </body>
 
 </html>
