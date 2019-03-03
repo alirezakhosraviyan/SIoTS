@@ -17,6 +17,7 @@ urlpatterns = [
     path('all_envs', all_environments),
     path('all_devices', all_devices),
     path('maps', maps),
+    path('test', test),
     path('analytics', analytics),
     path('upload_backend_code', upload_backend_code),
     path('logout/', auth_views.logout_then_login, name='logout'),

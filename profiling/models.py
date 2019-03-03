@@ -1,5 +1,5 @@
 from django.db import models
-
+import random
 
 class ExcelFile(models.Model):
     file = models.FileField(upload_to='excel_files')
@@ -30,6 +30,17 @@ class Device(models.Model):
     services = models.ManyToManyField(Service)
     lat = models.CharField(max_length=1000)
     long = models.CharField(max_length=1000)
+    weight = models.IntegerField(default=random.randint(1, 99))
+    trust = models.IntegerField(default=random.randint(1, 99))
+    security = models.IntegerField(default=random.randint(1, 99))
+    accuracy = models.IntegerField(default=random.randint(1, 99))
+    charge = models.IntegerField(default=random.randint(1, 99))
+
+    def evaluator(self):
+        return int((self.trust + self.security + self.accuracy + self.charge)/4)
+
+    def __str__(self):
+        return str(self.pk)
 
 
 class Environment(models.Model):
