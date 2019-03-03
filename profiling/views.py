@@ -126,6 +126,7 @@ def import_excel(requests):
         redirect('/404')
 
 
+
 @login_required
 def import_excel_location(requests):
     if requests.method == 'GET':
